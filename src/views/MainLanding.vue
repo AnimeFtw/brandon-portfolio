@@ -21,7 +21,7 @@
       <br />
       <p class="lg:text-lg text-sm text-justify leading-6">
         &nbsp;&nbsp;&nbsp;&nbsp; Professional web developer capable professional
-        looking and user-friendly websites from stratch and writes
+        looking and user-friendly websites from scratch and writes
         <strong>performance optimized, reusable and refactorable codes</strong>.
         Professionally developed web applications with multiple Javascript
         frameworks.
