@@ -6,7 +6,7 @@
 
       <div>
         <h1 class="text-4xl font-bold headers">
-          <router-link to="/" @click="scrollTop">Aaron</router-link>
+          <router-link to="/" @click="scrollTop">Brandon</router-link>
         </h1>
       </div>
       <div class="text-2xl inline-block px-10 pt-[0.4rem]">
@@ -44,7 +44,7 @@
       <div>
         <h1 class="text-3xl font-bold sm:-ml-[0px]">
           <router-link to="/" @click="scrollTop" class="scroll-smooth">
-            Aaron
+            Brandon
           </router-link>
         </h1>
       </div>
@@ -86,83 +86,83 @@
 </template>
 
 <script>
-import anime from 'animejs/lib/anime.es.js';
-import NavbarIcons from './MainNavbarComponents/NavbarIcons.vue';
-import MobileNavbarComponent from './MainNavbarComponents/NavbarMobileComponent.vue';
-import { computed, ref } from 'vue';
+  import anime from 'animejs/lib/anime.es.js';
+  import NavbarIcons from './MainNavbarComponents/NavbarIcons.vue';
+  import MobileNavbarComponent from './MainNavbarComponents/NavbarMobileComponent.vue';
+  import { computed, ref } from 'vue';
 
-export default {
-	components: {
-		NavbarIcons,
-		MobileNavbarComponent
-	},
+  export default {
+    components: {
+      NavbarIcons,
+      MobileNavbarComponent
+    },
 
-	data() {
-		return {
-			windowWidth: window.innerWidth
-		};
-	},
+    data() {
+      return {
+        windowWidth: window.innerWidth
+      };
+    },
 
-	setup(props) {
-		const webRoutes = {
-			contact: {
-				title: 'Contact',
-				route: '/contact'
-			},
-			skills: {
-				title: 'Skills',
-				route: '/skills'
-			},
-			works: {
-				title: 'Works',
-				route: '/work'
-			}
-		};
+    setup(props) {
+      const webRoutes = {
+        contact: {
+          title: 'Contact',
+          route: '/contact'
+        },
+        skills: {
+          title: 'Skills',
+          route: '/skills'
+        },
+        works: {
+          title: 'Works',
+          route: '/work'
+        }
+      };
 
-		const mobileDropdownNavigation = ref(false);
+      const mobileDropdownNavigation = ref(false);
 
-		const showDropdownNavigation = () => {
-			mobileDropdownNavigation.value = true;
-		};
+      const showDropdownNavigation = () => {
+        mobileDropdownNavigation.value = true;
+      };
 
-		const hideDropdownNavigation = () => {
-			mobileDropdownNavigation.value = false;
-		};
+      const hideDropdownNavigation = () => {
+        mobileDropdownNavigation.value = false;
+      };
 
-		const scrollTop = () => {
-			document.body.scrollTop = 0;
-			document.documentElement.scrollTop = 0;
-		};
+      const scrollTop = () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      };
 
-		return {
-			webRoutes,
-			mobileDropdownNavigation,
-			showDropdownNavigation,
-			hideDropdownNavigation,
-			scrollTop
-		};
-	},
+      return {
+        webRoutes,
+        mobileDropdownNavigation,
+        showDropdownNavigation,
+        hideDropdownNavigation,
+        scrollTop
+      };
+    },
 
-	emits: ['updateWindowSize'],
-	mounted() {
-		this.onResize();
+    emits: ['updateWindowSize'],
+    mounted() {
+      this.onResize();
 
-		this.$nextTick(() => {
-			window.addEventListener('resize', this.onResize);
-		});
-	},
+      this.$nextTick(() => {
+        window.addEventListener('resize', this.onResize);
+      });
+    },
 
-	beforeDestroy() {
-		window.removeEventListener('resize', this.onResize);
-	},
+    beforeDestroy() {
+      window.removeEventListener('resize', this.onResize);
+    },
 
-	methods: {
-		onResize() {
-			this.windowWidth = window.innerWidth;
-			this.$emit('updateWindowSize', this.windowWidth);
-		}
-	}
-};
+    methods: {
+      onResize() {
+        this.windowWidth = window.innerWidth;
+        this.$emit('updateWindowSize', this.windowWidth);
+      }
+    }
+  };
 </script>
 
 <style>

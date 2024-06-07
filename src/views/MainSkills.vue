@@ -9,10 +9,10 @@
         </h2>
         <br />
         <p class="lg:text-lg text-sm text-justify leading-6">
-          &nbsp;&nbsp;&nbsp;&nbsp; Aaron is a full-stacked developer focused on
-          <strong> VueJS and PHP Laravel </strong>. He also possess soft skills
-          to further enhance himself as a web developer with skills such as
-          communication skills, creativity, problem solving, and adaptability.
+          &nbsp;&nbsp;&nbsp;&nbsp; Brandon is a full-stack developer focused on
+          <strong> VueJS </strong>. He also possess soft skills to further
+          enhance himself as a web developer with skills such as communication
+          skills, creativity, problem solving, and adaptability.
         </p>
       </div>
       <br />
@@ -21,7 +21,7 @@
       <h2
         class="lg:text-2xl text-lg font-bold underline underline-offset-8 decoration-2"
       >
-        My technology
+        My Technology
       </h2>
       <SkillBarContent />
 
@@ -78,408 +78,408 @@
 </template>
 
 <script>
-import TypeIt from 'typeit';
-// import Prism from 'prismjs';
-import 'animate.css';
-import { ref, computed, onMounted } from 'vue';
-import SkillBarContent from '../components/SkillBarContent.vue';
-import Skills from '../components/MainSkillsContent.json';
+  import TypeIt from 'typeit';
+  // import Prism from 'prismjs';
+  import 'animate.css';
+  import { ref, computed, onMounted } from 'vue';
+  import SkillBarContent from '../components/SkillBarContent.vue';
+  import Skills from '../components/MainSkillsContent.json';
 
-export default {
-	data() {
-		return {
-			skillsData: Skills,
-			paddingValue: 0,
-			loaded: false
-		};
-	},
-	props: {
-		responsiveValue: {
-			type: Number,
-			default: 0
-		}
-	},
+  export default {
+    data() {
+      return {
+        skillsData: Skills,
+        paddingValue: 0,
+        loaded: false
+      };
+    },
+    props: {
+      responsiveValue: {
+        type: Number,
+        default: 0
+      }
+    },
 
-	components: {
-		SkillBarContent
-	},
-	methods: {
-		fetch: function () {
-			console.log(document.getElementById('render'));
-		}
-	},
+    components: {
+      SkillBarContent
+    },
+    methods: {
+      fetch: function () {
+        console.log(document.getElementById('render'));
+      }
+    },
 
-	setup() {
-		let contentRenderer = ref('');
-		let textField = ref('');
+    setup() {
+      let contentRenderer = ref('');
+      let textField = ref('');
 
-		const clearCodeBlock = () => {
-			contentRenderer.value.innerHTML = null;
-		};
+      const clearCodeBlock = () => {
+        contentRenderer.value.innerHTML = null;
+      };
 
-		const clearTerminalBlock = () => {
-			textField.value.innerText = null;
-		};
+      const clearTerminalBlock = () => {
+        textField.value.innerText = null;
+      };
 
-		const renderOutTextField = computed(() => {
-			if (
-				textField.value.innerText === null ||
+      const renderOutTextField = computed(() => {
+        if (
+          textField.value.innerText === null ||
           textField.value.innerText === undefined
-			)
-				return null;
-			let content = textField.value.innerText;
-			content = content.replaceAll('|', '');
-			return content;
-		});
+        )
+          return null;
+        let content = textField.value.innerText;
+        content = content.replaceAll('|', '');
+        return content;
+      });
 
-		onMounted(() => {
-			window.Prism = window.Prism || {};
-			window.Prism.manual = true;
-			setTimeout(() => {}, 5000);
-		});
+      onMounted(() => {
+        window.Prism = window.Prism || {};
+        window.Prism.manual = true;
+        setTimeout(() => {}, 5000);
+      });
 
-		return {
-			contentRenderer,
-			textField,
-			clearCodeBlock,
-			clearTerminalBlock,
-			renderOutTextField
-		};
-	},
+      return {
+        contentRenderer,
+        textField,
+        clearCodeBlock,
+        clearTerminalBlock,
+        renderOutTextField
+      };
+    },
 
-	watch: {
-		windowWidth() {
-			if (this.windowWidth > 1280) {
-				this.paddingValue = Math.trunc(this.windowWidth - 1280) / 2;
-			} else if (this.windowWidth < 1280) {
-				this.paddingValue = 0;
-			}
-		}
-	},
+    watch: {
+      windowWidth() {
+        if (this.windowWidth > 1280) {
+          this.paddingValue = Math.trunc(this.windowWidth - 1280) / 2;
+        } else if (this.windowWidth < 1280) {
+          this.paddingValue = 0;
+        }
+      }
+    },
 
-	mounted() {
-		const renderer = () => {
-			const contents = document.getElementById('demo').innerHTML;
-			document.getElementById('render').innerHTML = ''; // empty out elements in the code display
-			let filter_contents = contents.replaceAll(
-				'<span class="ti-cursor with-delay">|</span>',
-				''
-			);
-			filter_contents = filter_contents.replaceAll('&lt;', '<');
-			filter_contents = filter_contents.replaceAll('&gt;', '>');
-			filter_contents = filter_contents.replaceAll('&nbsp;', '');
+    mounted() {
+      const renderer = () => {
+        const contents = document.getElementById('demo').innerHTML;
+        document.getElementById('render').innerHTML = ''; // empty out elements in the code display
+        let filter_contents = contents.replaceAll(
+          '<span class="ti-cursor with-delay">|</span>',
+          ''
+        );
+        filter_contents = filter_contents.replaceAll('&lt;', '<');
+        filter_contents = filter_contents.replaceAll('&gt;', '>');
+        filter_contents = filter_contents.replaceAll('&nbsp;', '');
 
-			filter_contents = filter_contents.replaceAll(
-				'<span class="html-tag">div</span>',
-				'div'
-			);
-			filter_contents = filter_contents.replaceAll(
-				'<span class="html-attribute">class</span>',
-				'class'
-			);
-			filter_contents = filter_contents.replaceAll(
-				'<span class="html-tag">lable</span>',
-				'lable'
-			);
-			filter_contents = filter_contents.replaceAll(
-				'<span class="html-tag">input</span>',
-				'input'
-			);
-			filter_contents = filter_contents.replaceAll(
-				'<span class="html-attribute">placeholder</span>',
-				'placeholder'
-			);
+        filter_contents = filter_contents.replaceAll(
+          '<span class="html-tag">div</span>',
+          'div'
+        );
+        filter_contents = filter_contents.replaceAll(
+          '<span class="html-attribute">class</span>',
+          'class'
+        );
+        filter_contents = filter_contents.replaceAll(
+          '<span class="html-tag">lable</span>',
+          'lable'
+        );
+        filter_contents = filter_contents.replaceAll(
+          '<span class="html-tag">input</span>',
+          'input'
+        );
+        filter_contents = filter_contents.replaceAll(
+          '<span class="html-attribute">placeholder</span>',
+          'placeholder'
+        );
 
-			const dom = document.createElement('div');
-			dom.innerHTML = filter_contents;
-			dom.classList.add('rendered-contents');
-			document.getElementById('render').appendChild(dom);
-		};
+        const dom = document.createElement('div');
+        dom.innerHTML = filter_contents;
+        dom.classList.add('rendered-contents');
+        document.getElementById('render').appendChild(dom);
+      };
 
-		const animate_out = () => {
-			const con = document.querySelector('.rendered-contents');
-			con.classList.replace('rendered-contents', 'rem-rendered-contents');
-		};
+      const animate_out = () => {
+        const con = document.querySelector('.rendered-contents');
+        con.classList.replace('rendered-contents', 'rem-rendered-contents');
+      };
 
-		const syntaxHighlighter = () => {
-			let contents = document.getElementById('demo').innerHTML;
+      const syntaxHighlighter = () => {
+        let contents = document.getElementById('demo').innerHTML;
 
-			contents = contents.replaceAll(
-				'<span class="ti-cursor with-delay">|</span>',
-				''
-			);
-			// temporary remove highlight
-			contents = contents.replaceAll(
-				'<span class="html-tag">div</span>',
-				'div'
-			);
-			contents = contents.replaceAll(
-				'<span class="html-tag">lable</span>',
-				'lable'
-			);
-			contents = contents.replaceAll(
-				'<span class="html-tag">input</span>',
-				'input'
-			);
-			contents = contents.replaceAll(
-				'<span class="html-attribute">class</span>',
-				'class'
-			);
-			contents = contents.replaceAll(
-				'<span class="html-attribute">placeholder</span>',
-				'placeholder'
-			);
+        contents = contents.replaceAll(
+          '<span class="ti-cursor with-delay">|</span>',
+          ''
+        );
+        // temporary remove highlight
+        contents = contents.replaceAll(
+          '<span class="html-tag">div</span>',
+          'div'
+        );
+        contents = contents.replaceAll(
+          '<span class="html-tag">lable</span>',
+          'lable'
+        );
+        contents = contents.replaceAll(
+          '<span class="html-tag">input</span>',
+          'input'
+        );
+        contents = contents.replaceAll(
+          '<span class="html-attribute">class</span>',
+          'class'
+        );
+        contents = contents.replaceAll(
+          '<span class="html-attribute">placeholder</span>',
+          'placeholder'
+        );
 
-			// add highlight
-			let filterContents = contents.replaceAll(
-				'class',
-				'<span class="html-attribute">class</span>'
-			);
-			filterContents = filterContents.replaceAll(
-				'placeholder',
-				'<span class="html-attribute">placeholder</span>'
-			);
-			filterContents = filterContents.replaceAll(
-				'div',
-				'<span class="html-tag">div</span>'
-			);
-			filterContents = filterContents.replaceAll(
-				'lable',
-				'<span class="html-tag">lable</span>'
-			);
-			filterContents = filterContents.replaceAll(
-				'input',
-				'<span class="html-tag">input</span>'
-			);
+        // add highlight
+        let filterContents = contents.replaceAll(
+          'class',
+          '<span class="html-attribute">class</span>'
+        );
+        filterContents = filterContents.replaceAll(
+          'placeholder',
+          '<span class="html-attribute">placeholder</span>'
+        );
+        filterContents = filterContents.replaceAll(
+          'div',
+          '<span class="html-tag">div</span>'
+        );
+        filterContents = filterContents.replaceAll(
+          'lable',
+          '<span class="html-tag">lable</span>'
+        );
+        filterContents = filterContents.replaceAll(
+          'input',
+          '<span class="html-tag">input</span>'
+        );
 
-			// add back the cursor or else the typeit will break
-			filterContents =
+        // add back the cursor or else the typeit will break
+        filterContents =
           filterContents + '<span class="ti-cursor with-delay">|</span>';
-			document.getElementById('demo').innerHTML = filterContents;
-		};
+        document.getElementById('demo').innerHTML = filterContents;
+      };
 
-		new TypeIt('#demo', {
-			speed: 30,
-			waitUntilVisible: true,
-			startDelay: 2000,
-			startDelete: true,
-			loop: true
-			// remove cursor when finished
-			// afterComplete: function (instance) {
-			//     instance.destroy();
-			// }
-		})
-			.type('<', { speed: 30 })
-		// line 1
-			.type('div class=\'flex lg:flex-row flex-col\'>')
-			.break()
-			.pause(1)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					syntaxHighlighter();
-					setTimeout(() => {
-						return resolve();
-					}, 1);
-				});
-			})
-			.type('&nbsp&nbsp<')
+      new TypeIt('#demo', {
+        speed: 30,
+        waitUntilVisible: true,
+        startDelay: 2000,
+        startDelete: true,
+        loop: true
+        // remove cursor when finished
+        // afterComplete: function (instance) {
+        //     instance.destroy();
+        // }
+      })
+        .type('<', { speed: 30 })
+        // line 1
+        .type("div class='flex lg:flex-row flex-col'>")
+        .break()
+        .pause(1)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            syntaxHighlighter();
+            setTimeout(() => {
+              return resolve();
+            }, 1);
+          });
+        })
+        .type('&nbsp&nbsp<')
 
-		// line 2
-			.type('div class=\'flex flex-row gap-4\'>')
-			.break()
-			.pause(1)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					syntaxHighlighter();
-					setTimeout(() => {
-						return resolve();
-					}, 1);
-				});
-			})
+        // line 2
+        .type("div class='flex flex-row gap-4'>")
+        .break()
+        .pause(1)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            syntaxHighlighter();
+            setTimeout(() => {
+              return resolve();
+            }, 1);
+          });
+        })
 
-			.type('&nbsp&nbsp&nbsp&nbsp<')
+        .type('&nbsp&nbsp&nbsp&nbsp<')
 
-		// line 3
-			.type('div class=\'bg-sky-600 px-2\'>1<')
-			.type('/div>')
-			.break()
-			.pause(1)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					syntaxHighlighter();
-					setTimeout(() => {
-						return resolve();
-					}, 1);
-				});
-			})
+        // line 3
+        .type("div class='bg-sky-600 px-2'>1<")
+        .type('/div>')
+        .break()
+        .pause(1)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            syntaxHighlighter();
+            setTimeout(() => {
+              return resolve();
+            }, 1);
+          });
+        })
 
-			.type('&nbsp&nbsp&nbsp&nbsp<')
+        .type('&nbsp&nbsp&nbsp&nbsp<')
 
-		// line 4
-			.type('div class=\'bg-rose-600 px-2\'>2<')
-			.type('/div>')
-			.break()
-			.pause(1)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					syntaxHighlighter();
-					setTimeout(() => {
-						return resolve();
-					}, 1);
-				});
-			})
+        // line 4
+        .type("div class='bg-rose-600 px-2'>2<")
+        .type('/div>')
+        .break()
+        .pause(1)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            syntaxHighlighter();
+            setTimeout(() => {
+              return resolve();
+            }, 1);
+          });
+        })
 
-			.type('&nbsp&nbsp<')
+        .type('&nbsp&nbsp<')
 
-		// line 5
-			.type('/div>')
-			.break()
-			.pause(1)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					syntaxHighlighter();
-					setTimeout(() => {
-						return resolve();
-					}, 1);
-				});
-			})
+        // line 5
+        .type('/div>')
+        .break()
+        .pause(1)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            syntaxHighlighter();
+            setTimeout(() => {
+              return resolve();
+            }, 1);
+          });
+        })
 
-			.type('&nbsp&nbsp<')
-		// line 6
-			.type('div class=\'flex flex-row gap-4\'>')
-			.break()
-			.pause(1)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					syntaxHighlighter();
-					setTimeout(() => {
-						return resolve();
-					}, 1);
-				});
-			})
+        .type('&nbsp&nbsp<')
+        // line 6
+        .type("div class='flex flex-row gap-4'>")
+        .break()
+        .pause(1)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            syntaxHighlighter();
+            setTimeout(() => {
+              return resolve();
+            }, 1);
+          });
+        })
 
-			.type('&nbsp&nbsp&nbsp&nbsp<')
-		// line 7
-			.type('div class=\'bg-lime-600 px-2\'>1<')
-			.type('/div>')
-			.break()
-			.pause(1)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					syntaxHighlighter();
-					setTimeout(() => {
-						return resolve();
-					}, 1);
-				});
-			})
+        .type('&nbsp&nbsp&nbsp&nbsp<')
+        // line 7
+        .type("div class='bg-lime-600 px-2'>1<")
+        .type('/div>')
+        .break()
+        .pause(1)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            syntaxHighlighter();
+            setTimeout(() => {
+              return resolve();
+            }, 1);
+          });
+        })
 
-			.type('&nbsp&nbsp&nbsp&nbsp<')
-		// line 8
-			.type('div class=\'bg-teal-600 px-2\'>2<')
-			.type('/div>')
-			.break()
-			.pause(1)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					syntaxHighlighter();
-					setTimeout(() => {
-						return resolve();
-					}, 1);
-				});
-			})
+        .type('&nbsp&nbsp&nbsp&nbsp<')
+        // line 8
+        .type("div class='bg-teal-600 px-2'>2<")
+        .type('/div>')
+        .break()
+        .pause(1)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            syntaxHighlighter();
+            setTimeout(() => {
+              return resolve();
+            }, 1);
+          });
+        })
 
-			.type('&nbsp&nbsp<')
-		// line 9
-			.type('/div>')
-			.break()
-			.pause(1)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					syntaxHighlighter();
-					setTimeout(() => {
-						return resolve();
-					}, 1);
-				});
-			})
+        .type('&nbsp&nbsp<')
+        // line 9
+        .type('/div>')
+        .break()
+        .pause(1)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            syntaxHighlighter();
+            setTimeout(() => {
+              return resolve();
+            }, 1);
+          });
+        })
 
-			.type('<')
-		// line 10
-			.type('/div>')
-			.pause(1)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					syntaxHighlighter();
-					setTimeout(() => {
-						return resolve();
-					}, 1);
-				});
-			})
+        .type('<')
+        // line 10
+        .type('/div>')
+        .pause(1)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            syntaxHighlighter();
+            setTimeout(() => {
+              return resolve();
+            }, 1);
+          });
+        })
 
-			.pause(1000)
-		// reset
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					this.clearCodeBlock();
-					renderer();
-					setTimeout(() => {
-						return resolve();
-					}, 2000);
-				});
-			})
-			.delete()
-			.pause(1000)
-			.type('<')
-		// second phase
-		// line 1
-			.type('lable> Email: <')
-			.type('/lable>')
-			.break()
-			.pause(1)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					syntaxHighlighter();
-					setTimeout(() => {
-						return resolve();
-					}, 1);
-				});
-			})
+        .pause(1000)
+        // reset
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            this.clearCodeBlock();
+            renderer();
+            setTimeout(() => {
+              return resolve();
+            }, 2000);
+          });
+        })
+        .delete()
+        .pause(1000)
+        .type('<')
+        // second phase
+        // line 1
+        .type('lable> Email: <')
+        .type('/lable>')
+        .break()
+        .pause(1)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            syntaxHighlighter();
+            setTimeout(() => {
+              return resolve();
+            }, 1);
+          });
+        })
 
-			.type('<')
-		// line 2
-			.type('input placeholder=\'email\' class=\'p-1 w-20\'>', { speed: 50 })
-			.pause(1)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					syntaxHighlighter();
-					setTimeout(() => {
-						return resolve();
-					}, 1);
-				});
-			})
+        .type('<')
+        // line 2
+        .type("input placeholder='email' class='p-1 w-20'>", { speed: 50 })
+        .pause(1)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            syntaxHighlighter();
+            setTimeout(() => {
+              return resolve();
+            }, 1);
+          });
+        })
 
-			.pause(2000)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					animate_out();
-					setTimeout(() => {
-						return resolve();
-					}, 500);
-				});
-			})
-			.pause(500)
-			.exec(async () => {
-				await new Promise((resolve, reject) => {
-					this.clearCodeBlock();
-					renderer();
-					setTimeout(() => {
-						return resolve();
-					}, 500);
-				});
-			})
-			.pause(2000)
-			.go();
-	}
-};
+        .pause(2000)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            animate_out();
+            setTimeout(() => {
+              return resolve();
+            }, 500);
+          });
+        })
+        .pause(500)
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            this.clearCodeBlock();
+            renderer();
+            setTimeout(() => {
+              return resolve();
+            }, 500);
+          });
+        })
+        .pause(2000)
+        .go();
+    }
+  };
 </script>
 
 <style>

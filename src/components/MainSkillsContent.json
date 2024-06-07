@@ -15,6 +15,11 @@
                 "image": "devicon-threejs-original"
             },
             {
+                "title": "TypeScript",
+                "image": "devicon-typescript-plain"
+            },
+
+            {
                 "title": "Javascript (ES6)",
                 "image": "devicon-javascript-plain"
             },
@@ -36,24 +41,17 @@
         "type": "backend",
         "technologies": [
             {
-                "title": "Python",
-                "image": "devicon-python-plain"
-            },
-            {
                 "title": "Node",
                 "image": "devicon-nodejs-plain"
             },
+
             {
-                "title": "Java",
-                "image": "devicon-java-plain"
+                "title": "Postgresql",
+                "image": "devicon-postgresql-plain"
             },
             {
-                "title": "MongoDB",
-                "image": "devicon-mongodb-plain"
-            },
-            {
-                "title": "Laravel",
-                "image": "devicon-laravel-plain"
+                "title": "Firebase",
+                "image": "devicon-firebase-plain"
             }
         ]
     },
@@ -61,20 +59,17 @@
         "type": "tools",
         "technologies": [
             {
-                "title": "Markdown",
-                "image": "devicon-markdown-original"
+                "title": "vscode",
+                "image": "devicon-vscode-plain"
             },
-            {
-                "title": "Vim",
-                "image": "devicon-vim-plain"
-            },
-            {
-                "title": "Figma",
-                "image": "devicon-figma-plain"
-            },
+
             {
                 "title": "Linux (Arch)",
                 "image": "devicon-linux-plain"
+            },
+            {
+                "title": "Git",
+                "image": "devicon-git-plain"
             }
         ]
     }

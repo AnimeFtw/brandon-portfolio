@@ -21,8 +21,8 @@
     <section class="pt-5">
       <p class="lg:text-lg text-sm text-justify leading-6">
         You can reach me by emailing me at
-        <strong>aaronlyn88@gmail.com</strong>. I will be able to reply to your
-        mail within 2 days of working days.
+        <strong>pcdude0@gmail.com</strong>. I will be able to reply to your mail
+        within 2 days of working days.
       </p>
     </section>
     <br />
@@ -34,7 +34,7 @@
         >
         to view my works. Alternatively, you can visit my
         <strong class="underline"
-          ><a href="https://github.com/Kuon-dev">Github Profile</a></strong
+          ><a href="https://github.com/AnimeFtw">Github Profile</a></strong
         >
         to view my projects posted on Github
       </p>
@@ -145,97 +145,97 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+  import { ref } from 'vue';
 
-export default {
-	setup() {
-		// link your backend port API in the dotenv file, otherwise you won't be able to receive messages
-		// for example in .env file
-		// VITE_API_ENDPOINT = http://localhost:4000
+  export default {
+    setup() {
+      // link your backend port API in the dotenv file, otherwise you won't be able to receive messages
+      // for example in .env file
+      // VITE_API_ENDPOINT = http://localhost:4000
 
-		const backendPort = import.meta.env.VITE_API_ENDPOINT;
-		const url = backendPort + '/message';
+      const backendPort = import.meta.env.VITE_API_ENDPOINT;
+      const url = backendPort + '/message';
 
-		const failedPost = ref(false);
+      const failedPost = ref(false);
 
-		const firstName = ref('');
-		const lastName = ref('');
-		const userEmail = ref('');
-		const userText = ref('');
+      const firstName = ref('');
+      const lastName = ref('');
+      const userEmail = ref('');
+      const userText = ref('');
 
-		const showNoFirstName = ref(false);
-		const showNoEmail = ref(false);
-		const showNoMessage = ref(false);
-		const showInvalidEmail = ref(false);
-		const showPostSuccess = ref(false);
+      const showNoFirstName = ref(false);
+      const showNoEmail = ref(false);
+      const showNoMessage = ref(false);
+      const showInvalidEmail = ref(false);
+      const showPostSuccess = ref(false);
 
-		const submitHandler = (e) => {
-			// reset user input
-			showNoFirstName.value = false;
-			showNoEmail.value = false;
-			showNoMessage.value = false;
-			showInvalidEmail.value = false;
-			showPostSuccess.value = false;
-			failedPost.value = false;
+      const submitHandler = (e) => {
+        // reset user input
+        showNoFirstName.value = false;
+        showNoEmail.value = false;
+        showNoMessage.value = false;
+        showInvalidEmail.value = false;
+        showPostSuccess.value = false;
+        failedPost.value = false;
 
-			// display error message if input is empty
-			if (!firstName.value) showNoFirstName.value = true;
-			if (!userEmail.value) showNoEmail.value = true;
-			if (!userText.value) showNoMessage.value = true;
+        // display error message if input is empty
+        if (!firstName.value) showNoFirstName.value = true;
+        if (!userEmail.value) showNoEmail.value = true;
+        if (!userText.value) showNoMessage.value = true;
 
-			// if any input are empty stop the function
-			if (showNoMessage.value || showNoEmail.value || showNoFirstName.value)
-				return;
+        // if any input are empty stop the function
+        if (showNoMessage.value || showNoEmail.value || showNoFirstName.value)
+          return;
 
-			// email regex
-			const emailValidator = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-			const validEmail = userEmail.value.match(emailValidator);
-			if (!validEmail) {
-				showInvalidEmail.value = true;
-				return;
-			}
+        // email regex
+        const emailValidator = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+        const validEmail = userEmail.value.match(emailValidator);
+        if (!validEmail) {
+          showInvalidEmail.value = true;
+          return;
+        }
 
-			// payload for post request
-			const payload = {
-				firstName: firstName.value,
-				lastName: lastName.value ?? '',
-				userEmail: userEmail.value,
-				userMessage: userText.value
-			};
+        // payload for post request
+        const payload = {
+          firstName: firstName.value,
+          lastName: lastName.value ?? '',
+          userEmail: userEmail.value,
+          userMessage: userText.value
+        };
 
-			(async () => {
-				const rawResponse = await fetch(url, {
-					method: 'POST',
-					headers: {
-						Accept: 'application/json',
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify(payload)
-				})
-					.then((response) => response.json())
-					.catch((error) => {
-						console.log(error);
-						failedPost.value = true;
-					});
-				if (!failedPost.value) showPostSuccess.value = true;
-			})();
-		};
+        (async () => {
+          const rawResponse = await fetch(url, {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          })
+            .then((response) => response.json())
+            .catch((error) => {
+              console.log(error);
+              failedPost.value = true;
+            });
+          if (!failedPost.value) showPostSuccess.value = true;
+        })();
+      };
 
-		return {
-			submitHandler,
-			firstName,
-			lastName,
-			userEmail,
-			userText,
-			showNoFirstName,
-			showNoEmail,
-			showNoMessage,
-			showInvalidEmail,
-			showPostSuccess,
-			failedPost
-		};
-	}
-};
+      return {
+        submitHandler,
+        firstName,
+        lastName,
+        userEmail,
+        userText,
+        showNoFirstName,
+        showNoEmail,
+        showNoMessage,
+        showInvalidEmail,
+        showPostSuccess,
+        failedPost
+      };
+    }
+  };
 </script>
 
 <style scoped>
