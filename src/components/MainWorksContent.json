@@ -22,5 +22,13 @@
         "Sidenote": "",
         "Github": "https://github.com/AnimeFtw/music-app",
         "Tags": ["Vue", "Firebase", "TailwindCSS", "Pinia"]
+    },
+    {
+        "Image": "./assets/images/work4.png",
+        "Title": "Dall-e AI Image Generation Website",
+        "Description": " This a web application that generates images using DALL-E AI. You can search for images people have posted. You can create your own image by clicking the create button on the top right side of the page. You type your name and just give the prompt or click surprise me. Then you generate an image  and an image will appear. If you are not happy with it you can generate another image again. You then click share with the community and you will see your image there with your name and description of the image. You can also click the download icon on the bottom right of the image.",
+        "Sidenote": "",
+        "Github": "https://github.com/AnimeFtw/DALL-E",
+        "Tags": ["MongoDB", "Express", "React", "NodeJS", "TailwindCSS"]
     }
 ]
