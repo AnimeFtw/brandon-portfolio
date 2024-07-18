@@ -20,19 +20,18 @@
       </h2>
       <br />
       <p class="lg:text-lg text-sm text-justify leading-6">
-        &nbsp;&nbsp;&nbsp;&nbsp; Professional web developer capable professional
-        looking and user-friendly websites from scratch and writes
-        <strong>performance optimized, reusable and refactorable codes</strong>.
-        Professionally developed web applications with multiple Javascript
-        frameworks.
+        &nbsp;&nbsp;&nbsp;&nbsp; Enthusiastic front-end developer with hands-on
+        experience in both front-end and back-end development. Proficient in
+        HTML5, CSS3, JavaScript, and modern frameworks like React for front-end
+        development. Skilled in server-side languages such as Node.js and
+        Python, with experience in database management using SQL and MongoDB.
+        Capable of creating responsive and user-friendly web applications from
+        concept to deployment. Strong problem-solving abilities and a proactive
+        approach to learning new technologies and methodologies. Collaborative
+        team player with excellent communication skills, eager to contribute to
+        innovative projects and grow professionally in a dynamic environment.
       </p>
       <br />
-      <p class="lg:text-lg text-sm text-justify leading-6">
-        <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
-        Hungry for knowledge, collaborative individual and possess analytical
-        skills. Enjoys problem solving and willing to adapt to changes in the
-        industry to stay on top.
-      </p>
     </section>
     <!-- info section -->
     <section class="">
@@ -43,20 +42,20 @@
       </h2>
       <br />
       <p class="lg:text-lg text-sm text-justify leading-6">
-        &nbsp;&nbsp;&nbsp;&nbsp; I have a strong passion on technology and
-        computers. I initially went to Pennsylvania College of Technology to
-        pursue my degree in Electronics and Computer Engineering
-        Technology-Robotics and Automation Emphasis. One of the classes I took
-        in college that stuck out to me was Introduction To Microprocessors
-        where I learned how to code Zybo boards using the C programming language
-        and making the little leds light up in in different sequences depending
-        on the analog input. When I graduated college I realized what I studied
-        for was not something I wanted to do so I decided to pursue a different
-        career path. I really wanted to get into coding and I became really
-        interested in web development. Outside of programmimg, I have have a
-        hobby of learning and engagement with technology. I like to tinker with
-        my Arch Linux Operating System while also using it as my daily driver
-        and enjoy building PCs for people while teaching them about Linux.
+        &nbsp;&nbsp;&nbsp;&nbsp; I have a strong passion for technology and
+        computers. I initially attended Pennsylvania College of Technology to
+        pursue a degree in Electronics and Computer Engineering Technology with
+        an emphasis on Robotics and Automation. One of the classes that stood
+        out to me was Introduction to Microprocessors, where I learned how to
+        code Zybo boards using the C programming language and make the LEDs
+        light up in different sequences depending on the analog input. When I
+        graduated, I realized that what I had studied was not what I wanted to
+        pursue as a career. I decided to follow a different path and became very
+        interested in coding, specifically web development. Outside of
+        programming, I have a hobby of learning about and engaging with
+        technology. I enjoy tinkering with my Arch Linux operating system, which
+        I use as my daily driver, and building PCs for people while teaching
+        them about Linux.
       </p>
     </section>
     <!-- journey section -->

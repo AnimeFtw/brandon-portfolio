@@ -8,9 +8,9 @@
       </h2>
       <br />
       <p class="lg:text-lg text-sm text-justify leading-6">
-        &nbsp;&nbsp;&nbsp;&nbsp; Have an idea you want it to become a reality? I
-        can make it happen for you! Don't feel hesitated to contact me, I will
-        be responding to your messages as soon as possible.
+        &nbsp;&nbsp;&nbsp;&nbsp; Have an idea you want to turn into reality? I
+        can make it happen for you! Don't hesitate to contact me; I will respond
+        to your messages as soon as possible.
       </p>
     </section>
     <section
@@ -22,9 +22,10 @@
       <p class="lg:text-lg text-sm text-justify leading-6">
         You can reach me by emailing me at
         <strong>pcdude0@gmail.com</strong>. I will be able to reply to your mail
-        within 2 days of working days.
+        within two business days.
       </p>
     </section>
+
     <br />
     <section class="">
       <p class="lg:text-lg text-sm text-justify leading-6">
@@ -36,7 +37,7 @@
         <strong class="underline"
           ><a href="https://github.com/AnimeFtw">Github Profile</a></strong
         >
-        to view my projects posted on Github
+        to view my projects posted on Github.
       </p>
     </section>
     <section class="pt-10 hidden">

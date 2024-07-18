@@ -2,7 +2,7 @@
     {
         "Image": "./assets/images/work1.png",
         "Title": "Instagram Filter App",
-        "Description": "Instagram is a popular photo and video sharing web app that allows the user to upload photos or videos and share them with their followers or with a select group of friends. They can also view, comment and like posts shared by their friends on Instagram. One of the features Instagram has is filtering photos with different effects. This project clones the basic functionalities of Instagram's filter feature. ",
+        "Description": "This project aims to replicate Instagram's core functionalities, allowing users to upload, share, and engage with photos and videos. It includes features for public and private sharing, commenting, and liking posts. A key focus is on cloning Instagram's filter functionality, enabling users to apply various filters to their photos. ",
         "Sidenote": "",
         "Github": "https://github.com/AnimeFtw/vue-filter-app",
         "Tags": ["Vue", "WebAssembly", "TypeScript", "TailwindCSS"]
@@ -10,7 +10,7 @@
     {
         "Image": "./assets/images/work2.png",
         "Title": "Crown Clothing E-Commerce Website",
-        "Description": "This is a e-commerce website where the user can register and login with google, add different types of cloths to the cart and being able to check out.",
+        "Description": "This is an e-commerce website where users can register and log in with Google. They can add different types of clothes to their cart and check out.",
         "Sidenote": "",
         "Github": "https://github.com/AnimeFtw/crwn-clothing",
         "Tags": ["React", "SCSS", "Firebase", "Redux"]
@@ -18,7 +18,7 @@
     {
         "Image": "./assets/images/work3.png",
         "Title": "Music Playing Website",
-        "Description": "This website was inspired by spotify. This website allows the user to register and login. Then the user can upload mp3 files through the manage page. Once the upload is done, the user will be able to play their music, pause on the bottom left part of the page, and be able to toggle the progress bar. The user can edit the name of the song as well as delete it. Other users can view whatever music is uploaded by other users.",
+        "Description": "This website was inspired by spotify. This website allows the user to register and login. Then the user can upload mp3 files through the manage page. Once the upload is done, the user will be able to play their music, pause on the bottom left part of the page, and be able to toggle the progress bar. The user can edit the name of the song as well as delete it. Other users can view whatever music is uploaded by other users",
         "Sidenote": "",
         "Github": "https://github.com/AnimeFtw/music-app",
         "Tags": ["Vue", "Firebase", "TailwindCSS", "Pinia"]
@@ -26,7 +26,7 @@
     {
         "Image": "./assets/images/work4.png",
         "Title": "Dall-e AI Image Generation Website",
-        "Description": " This a web application that generates images using DALL-E AI. You can search for images people have posted. You can create your own image by clicking the create button on the top right side of the page. You type your name and just give the prompt or click surprise me. Then you generate an image  and an image will appear. If you are not happy with it you can generate another image again. You then click share with the community and you will see your image there with your name and description of the image. You can also click the download icon on the bottom right of the image.",
+        "Description": "This web application uses DALL-E AI to generate images. Users can browse images posted by others or create their own by clicking the Create button at the top right of the page. After entering their name and a prompt, or clicking Surprise Me, the AI generates an image. Users can regenerate images if needed. Once satisfied, they can share their creation with the community or download it.",
         "Sidenote": "",
         "Github": "https://github.com/AnimeFtw/DALL-E",
         "Tags": ["MongoDB", "Express", "React", "NodeJS", "TailwindCSS"]
